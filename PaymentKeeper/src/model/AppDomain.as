@@ -4,6 +4,7 @@ package model
 	{
 		public function AppDomain()
 		{
+			super();
 		}
 	}
 }
