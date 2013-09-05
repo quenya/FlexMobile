@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
-		xmlns:s="library://ns.adobe.com/flex/spark" title="HomeView">
+		xmlns:s="library://ns.adobe.com/flex/spark" title="{resourceManager.getString('common', 'HOME_VIEW')}"
+		creationComplete="creationCompleteHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import mx.events.FlexEvent;
+			
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				resourceManager.localeChain = [ "ko_KR" ];
+			}
+			
+		]]>
+	</fx:Script>
+
+	<fx:Metadata>
+		[ResourceBundle("common")]
+	</fx:Metadata>
+
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
