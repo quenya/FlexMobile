@@ -2,6 +2,10 @@
 <s:ViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
 							xmlns:s="library://ns.adobe.com/flex/spark" firstView="views.PaymentKeeperHomeView" applicationDPI="160"
 							creationComplete="creationCompleteHandler(event)">
+	<s:navigationContent>
+		<s:Button click="click_back()" label="{resourceManager.getString('common', 'BACK')}" visible="{navigator.activeView.navigator.length > 1}"/>
+	</s:navigationContent>
+
 	<fx:Script>
 		<![CDATA[
 			import mx.events.FlexEvent;
@@ -9,7 +13,11 @@
 			protected function creationCompleteHandler(event:FlexEvent):void
 			{
 			}
-			
+
+			private function click_back():void {
+				navigator.popView();
+			}
+
 		]]>
 	</fx:Script>
 	<fx:Declarations>
