@@ -7,13 +7,10 @@
 		<s:VerticalLayout verticalAlign="middle" horizontalAlign="center" />
 	</s:layout>
 
-	<s:Button id="myInfoBtn" click="myInfoBtn_clickHandler(event)" label="{resourceManager.getString('common', 'MY_INFO_VIEW')}" />
-	<s:Spacer height="20" />
-	<s:Button id="accountBtn" click="accountBtn_clickHandler(event)" label="{resourceManager.getString('common', 'ACCOUNT_VIEW')}" />
-	<s:Spacer height="20" />
-	<s:Button id="paymentBtn" click="paymentBtn_clickHandler(event)" label="{resourceManager.getString('common', 'PAYMENT_VIEW')}" />
-	<s:Spacer height="20" />
-	<s:Button id="balanceBtn" click="balanceBtn_clickHandler(event)" label="{resourceManager.getString('common', 'BALANCE_VIEW')}" />
+	<s:Button id="myInfoBtn" click="myInfoBtn_clickHandler(event)" label="{resourceManager.getString('common', 'MY_INFO_VIEW')}" bottom="20" />
+	<s:Button id="accountBtn" click="accountBtn_clickHandler(event)" label="{resourceManager.getString('common', 'ACCOUNT_VIEW')}" bottom="20" />
+	<s:Button id="paymentBtn" click="paymentBtn_clickHandler(event)" label="{resourceManager.getString('common', 'PAYMENT_VIEW')}" bottom="20" />
+	<s:Button id="balanceBtn" click="balanceBtn_clickHandler(event)" label="{resourceManager.getString('common', 'BALANCE_VIEW')}" bottom="20" />
 
 	<fx:Script>
 		<![CDATA[
@@ -31,6 +28,7 @@
 			
 			protected function accountBtn_clickHandler(event:MouseEvent):void
 			{
+				navigator.pushView(AccountView, null);
 			}
 			
 			protected function paymentBtn_clickHandler(event:MouseEvent):void
